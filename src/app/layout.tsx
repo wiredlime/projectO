@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
+import "@mdxeditor/editor/style.css";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+import { Card } from "@/components/ui/card";
+import Sidebar from "@/components/sidebar";
+import { Egg, EggFried } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import ToastProvider from "@/providers/toast-provider";
+import MarkdownProvider from "@/providers/markdown-provider";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +33,52 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-secondary font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <ToastProvider>
+          <MarkdownProvider>
+            <AppLayout>{children}</AppLayout>
+          </MarkdownProvider>
+        </ToastProvider>
+      </body>
     </html>
   );
 }
+
+const AppLayout = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
+  return (
+    <ResizablePanelGroup direction="horizontal">
+      <ResizablePanel defaultSize={20} className="max-w-sm min-h-screen">
+        <Sidebar />
+      </ResizablePanel>
+      <ResizableHandle className="invisible hover:visible" />
+      <ResizablePanel
+        defaultSize={80}
+        className="min-h-screen p-2 flex flex-col gap-2"
+      >
+        <div className="w-full flex justify-end gap-8">
+          <LayoutSwitcher />
+        </div>
+        <Card className="grow">{children}</Card>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+  );
+};
+
+const LayoutSwitcher = () => {
+  return (
+    <div className="flex items-center space-x-2">
+      <EggFried className="w-5 h-5" />
+      <Switch id="airplane-mode" />
+      <Egg className="w-5 h-5" />
+    </div>
+  );
+};
