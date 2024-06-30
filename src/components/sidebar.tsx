@@ -9,13 +9,12 @@ import Link from "next/link";
 
 export default function Sidebar() {
   const { recents } = useStore();
-
   return (
     <div className="h-full p-2 pl-4 flex flex-col justify-between">
       <div className="space-y-4">
-        <div className="flex items-center justify-between hover:animate-pulse">
+        <div className="flex items-center justify-between">
+          <span className="text-2xl font-extrabold">ProjectO</span>
           <Blend className="w-5 h-5 shrink-0 hover:animate-spin" />
-          <span className="text-2xl font-extrabold">projecto.</span>
         </div>
         <ProjectList />
       </div>
@@ -34,7 +33,7 @@ export default function Sidebar() {
               return (
                 <Link
                   key={recent.id}
-                  className="grow text-sm text-foreground rounded-sm px-1 hover:bg-stone-300 hover:cursor-pointer"
+                  className="grow text-sm text-foreground rounded-sm px-1 hover:underline hover:cursor-pointer"
                   href={`/projects/${recent.id}`}
                 >
                   {recent.name}

@@ -1,8 +1,9 @@
 "use client";
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useStore } from "@/store";
 import dynamic from "next/dynamic";
 import { MDXEditorMethods } from "@mdxeditor/editor";
+import { notFound } from "next/navigation";
 
 const Editor = dynamic(() => import("../../../../../components/mdx-editor"), {
   ssr: false,
@@ -24,6 +25,13 @@ function Page({ params }: PageProps) {
 
   const markdown = useMemo(() => {
     return notes.find((note) => note.id === params.noteId)?.content;
+  }, [notes, params.noteId]);
+
+  useEffect(() => {
+    const note = notes.find((note) => note.id === params.noteId)?.content;
+    if (!note) {
+      notFound();
+    }
   }, [notes, params.noteId]);
 
   return (

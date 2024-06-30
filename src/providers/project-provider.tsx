@@ -49,32 +49,10 @@ const ProjectProvider = ({ children }: { children: ReactNode }) => {
     </ProjectContext.Provider>
   );
 };
-type useProjectsProps = {
-  projectId?: string;
-};
 
-// { projectId }: useProjectsProps
 export const useProjects = () => {
   const { projects, setProjects, project, setProject } =
     useContext(ProjectContext);
-
-  // useEffect(() => {
-  //   if (projectId) {
-  //     const fetchProject = async (id: string) => {
-  //       try {
-  //         const response = await fetch(`/api/projects/${id}`);
-  //         if (response.ok) {
-  //           const data = (await response.json()) as Project;
-  //           setProject?.(data);
-  //         }
-  //       } catch (e) {
-  //         console.log(e);
-  //         // TODO: toast not found
-  //       }
-  //     };
-  //     fetchProject(projectId);
-  //   }
-  // }, [projectId, setProject]);
 
   return { projects, setProjects, project, setProject };
 };

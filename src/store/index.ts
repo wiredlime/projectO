@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { v4 as uuid } from "uuid";
-
+import { uniqBy } from "lodash";
 export interface INote {
   id: string;
   projectId: string;
@@ -20,13 +20,6 @@ export interface IProject {
 }
 
 type State = {
-  auth: any;
-  setAuth: (auth: any) => void;
-  syncCode: string | null;
-  setSyncCode: (code: string | null) => void;
-  showList: boolean;
-  toggleShowList: (show: boolean) => void;
-
   projects: IProject[];
   setProjects: (projects: IProject[]) => void;
   newProject: (name: string) => string;
@@ -41,23 +34,11 @@ type State = {
 
   recents: IProject[];
   setRecents: (project: IProject) => void;
-
-  removeJustSynced: (id: string) => void;
-  lastSync: Date | null;
-  setLastSync: () => void;
 };
 
 export const useStore = create<State>()(
   persist(
-    (set, get) => ({
-      auth: null,
-      syncCode: null,
-      setAuth: (data) => set((state: State) => ({ ...state, auth: data })),
-      setSyncCode: (code) =>
-        set((state: State) => ({ ...state, syncCode: code })),
-      showList: true,
-      toggleShowList: (show) =>
-        set((state: State) => ({ ...state, showList: show })),
+    (set) => ({
       notes: [
         {
           id: "1",
@@ -192,41 +173,27 @@ export const useStore = create<State>()(
           ...state,
           notes: state.notes.filter((note) => note.id !== id),
         })),
-      removeJustSynced: (id) =>
-        set((state: State) => ({
-          ...state,
-          notes: state.notes.map((note) =>
-            note.id === id
-              ? {
-                  ...note,
-                  justSynced: false,
-                }
-              : note
-          ),
-        })),
       setRecents: (recent) => {
         set((state: State) => {
           if (state.recents.length >= 3) {
             const outdatedItem = state.recents.shift();
+
             return {
               ...state,
-              recents: [...state.recents, recent].filter(
-                (value, index, array) => array.indexOf(value) === index
-              ),
+              recents: uniqBy([...state.recents, recent], function (project) {
+                return project.id;
+              }),
             };
           } else {
             return {
               ...state,
-              recents: [...state.recents, recent].filter(
-                (value, index, array) => array.indexOf(value) === index
-              ),
+              recents: uniqBy([...state.recents, recent], function (project) {
+                return project.id;
+              }),
             };
           }
         });
       },
-      lastSync: null,
-      setLastSync: () =>
-        set((state: State) => ({ ...state, lastSync: new Date() })),
     }),
     {
       name: "@projecto",
