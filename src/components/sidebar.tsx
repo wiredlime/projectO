@@ -57,7 +57,7 @@ export default function Sidebar() {
             github
           </a>
           <a
-            href="https://github.com/wiredlime"
+            href="https://www.linkedin.com/in/ally-nguyen-67a81520b"
             className="text-xs text-muted-foreground"
           >
             linkedin
