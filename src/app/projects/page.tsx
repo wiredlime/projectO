@@ -13,6 +13,8 @@ export default function Page() {
     if (projects.length) {
       const newestProjectId = projects[0]?.id;
       router.push(`/projects/${newestProjectId}`);
+    } else {
+      router.push(`/projects`);
     }
   }, [projects, projects.length, router]);
 
