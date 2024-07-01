@@ -1,7 +1,7 @@
 "use client";
 import React, { Dispatch, SetStateAction, useMemo } from "react";
 import NoteItem from "./note-item";
-import { INote, useStore } from "@/store";
+import { INote } from "@/store";
 
 type NoteListProps = {
   notes: INote[];

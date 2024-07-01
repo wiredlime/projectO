@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { Input } from "./ui/input";
-import { Blend, History, Search, X } from "lucide-react";
+import { Blend, History } from "lucide-react";
 import ProjectList from "./project-list";
 import { Separator } from "./ui/separator";
 import { useStore } from "@/store";

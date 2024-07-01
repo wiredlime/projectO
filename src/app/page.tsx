@@ -7,8 +7,6 @@ export default function Home() {
   const router = useRouter();
   useEffect(() => {
     router.push("/projects");
-  }, []);
-  return (
-    <main className="flex flex-col items-center justify-between p-24"></main>
-  );
+  }, [router]);
+  return <main></main>;
 }

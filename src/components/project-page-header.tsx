@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { Plus, Trash2 } from "lucide-react";
 import { format } from "date-fns";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useStore } from "@/store";
 
 type ProjectPageHeaderProps = {

@@ -12,7 +12,6 @@ import {
 import { Card } from "@/components/ui/card";
 import Sidebar from "@/components/sidebar";
 import ToastProvider from "@/providers/toast-provider";
-import MarkdownProvider from "@/providers/markdown-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -38,9 +37,7 @@ export default function RootLayout({
         )}
       >
         <ToastProvider>
-          <MarkdownProvider>
-            <AppLayout>{children}</AppLayout>
-          </MarkdownProvider>
+          <AppLayout>{children}</AppLayout>
         </ToastProvider>
       </body>
     </html>

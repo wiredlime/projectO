@@ -2,9 +2,9 @@
 import React, { useCallback } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { Tags, X } from "lucide-react";
+import { X } from "lucide-react";
 
-import { format, formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import { usePathname, useRouter } from "next/navigation";
 import { useStore } from "@/store";
 
