@@ -13,11 +13,11 @@ export default function Page() {
     const isProjectValid = projects.find((project) => project.id === projectId);
     if (isProjectValid) {
       if (projectId && notes) {
-        const newestNoteId = notes.filter(
+        const latestNoteId = notes.filter(
           (note) => note.projectId === projectId
         )[0]?.id;
-        if (newestNoteId) {
-          router.push(`/projects/${projectId}/notes/${newestNoteId}`);
+        if (latestNoteId) {
+          router.push(`/projects/${projectId}/notes/${latestNoteId}`);
         }
       }
     } else {
