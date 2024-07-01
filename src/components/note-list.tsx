@@ -37,9 +37,7 @@ function NoteList({ notes }: NoteListProps) {
     }
   }, [notes]);
 
-  return (
-    <div className="p-3 space-y-3 max-h-[88dvh] overflow-y-scroll">{list}</div>
-  );
+  return <div className="p-5 space-y-3 h-full overflow-y-scroll">{list}</div>;
 }
 
 export default NoteList;

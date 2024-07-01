@@ -35,7 +35,7 @@ function Page({ params }: PageProps) {
   }, [notes, params.noteId]);
 
   return (
-    <div className="grow flex max-h-[80vh] overflow-y-scroll">
+    <div className="grow h-full overflow-y-scroll">
       <Editor
         editorRef={editorRef}
         markdown={markdown || ""}
