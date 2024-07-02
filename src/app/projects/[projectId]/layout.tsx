@@ -33,13 +33,13 @@ export default function Layout({ params, children }: LayoutProps) {
             projectId={project.id}
             createdAt={project.createdAt}
           />
-          <ResizablePanelGroup direction="horizontal" className="flex">
-            <ResizablePanel defaultValue={20} className="h-full max-h-[92.5vh]">
+          <ResizablePanelGroup direction="horizontal">
+            <ResizablePanel defaultSize={30} className="h-full max-h-[92.5vh]">
               <NoteList notes={notesByProject} />
             </ResizablePanel>
-            <ResizableHandle />
+            <ResizableHandle withHandle />
             <ResizablePanel
-              defaultValue={80}
+              defaultSize={70}
               className="p-5 pb-0 h-full max-h-[92.5vh]"
             >
               {children}

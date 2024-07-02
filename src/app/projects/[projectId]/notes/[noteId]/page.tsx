@@ -28,7 +28,7 @@ function Page({ params }: PageProps) {
   }, [notes, params.noteId]);
 
   useEffect(() => {
-    const note = notes.find((note) => note.id === params.noteId)?.content;
+    const note = notes.find((note) => note.id === params.noteId);
     if (!note) {
       notFound();
     }

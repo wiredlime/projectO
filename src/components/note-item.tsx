@@ -61,11 +61,7 @@ export default function NoteItem({
           <X className="w-4 h-4 text-muted-foreground/50" />
         </Button>
       </div>
-
-      <div>
-        <h4 className="font-medium text-sm">{title}</h4>
-        <p className="text-xs text-muted-foreground line-clamp-3">{subtitle}</p>
-      </div>
+      <p className="text-xs text-muted-foreground line-clamp-3">{subtitle}</p>
     </Card>
   );
 }
