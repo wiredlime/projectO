@@ -22,7 +22,13 @@ ProjectO is a Markdown-based note-taking application where you’ll be provided 
 * NextJS, TailwindCSS, RadixUI, Zustand, MDXEditor
 
 ### Screenshots
-
 https://github.com/wiredlime/projectO/assets/79243058/de8861f8-e495-4908-a896-c3f62b8a8976
 
 
+### Additional resources
+* [Next.js Documentation](https://nextjs.org/docs)
+* [TailwindCSS Documentation](https://tailwindcss.com/docs)
+* [MDXEditor Documentation](https://mdxeditor.dev/)
+
+### Contact
+For any questions or collaboration, please reach out to us at [tiennguyen.baked@gmail.com](mailto:tiennguyen.baked@gmail.com) .
