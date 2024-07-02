@@ -20,9 +20,9 @@ ProjectO is a Markdown-based note-taking application where you’ll be provided 
 
 ### Screenshots
 
-![projecto_1](https://github.com/wiredlime/projectO/assets/79243058/6707237d-ed25-4143-bb3b-e0e509db8c49)
+![projecto](https://github.com/wiredlime/projectO/assets/79243058/57adf562-724d-4bf8-8bf5-8cf31c3498d5)
 
-![projecto_2](https://github.com/wiredlime/projectO/assets/79243058/6d90f468-5308-459c-8fc2-23aea33cfa84)
+![projecto copy](https://github.com/wiredlime/projectO/assets/79243058/fad6155e-886d-4c86-99e9-5986b61444aa)
 
 <img width="1166" alt="Screenshot 2024-07-02 at 12 43 43 PM" src="https://github.com/wiredlime/projectO/assets/79243058/e789a52d-e90e-4e52-a435-82233c7824c3">
 
