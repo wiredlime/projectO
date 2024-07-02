@@ -1,3 +1,6 @@
+
+![intro-projecto](https://github.com/wiredlime/projectO/assets/79243058/9ceec9df-c45f-439a-9b11-3a09f7f766bd)
+
 ### Introduction
 ProjectO is a Markdown-based note-taking application where you’ll be provided a seamless note creating and managing experience. 
 
@@ -16,7 +19,7 @@ ProjectO is a Markdown-based note-taking application where you’ll be provided 
 * Use ` to create inline code.
 
 ### Technologies: 
-* Next’s, Zustand, RadixUI, MDXEditor
+* NextJS, TailwindCSS, RadixUI, Zustand, MDXEditor
 
 ### Screenshots
 
