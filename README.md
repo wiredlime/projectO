@@ -24,4 +24,5 @@ ProjectO is a Markdown-based note-taking application where you’ll be provided 
 
 ![projecto_2](https://github.com/wiredlime/projectO/assets/79243058/6d90f468-5308-459c-8fc2-23aea33cfa84)
 
-<img width="1167" alt="Screenshot 2024-07-02 at 12 27 26 PM" src="https://github.com/wiredlime/projectO/assets/79243058/d8a8e947-dd44-4b32-aed5-d89d8500ade2">
+<img width="1166" alt="Screenshot 2024-07-02 at 12 43 43 PM" src="https://github.com/wiredlime/projectO/assets/79243058/e789a52d-e90e-4e52-a435-82233c7824c3">
+
