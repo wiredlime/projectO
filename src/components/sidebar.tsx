@@ -9,8 +9,8 @@ import Link from "next/link";
 export default function Sidebar() {
   const { recents } = useStore();
   return (
-    <div className="h-full p-2 pl-4 flex flex-col justify-between">
-      <div className="space-y-2">
+    <div className="h-screen p-2 pl-4 flex flex-col justify-between">
+      <div className="space-y-2 overflow-hidden">
         <div className="flex items-center justify-between">
           <span className="text-2xl font-extrabold">ProjectO</span>
           <Blend className="w-5 h-5 shrink-0 hover:animate-spin" />
