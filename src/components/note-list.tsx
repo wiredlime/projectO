@@ -1,14 +1,15 @@
 "use client";
-import React, { Dispatch, SetStateAction, useMemo } from "react";
+import React, { Dispatch, SetStateAction, useMemo, useState } from "react";
 import NoteItem from "./note-item";
 import { INote } from "@/store";
 
 type NoteListProps = {
   notes: INote[];
   setNotes?: Dispatch<SetStateAction<Note[]>>;
+  projectId: string;
 };
 
-function NoteList({ notes }: NoteListProps) {
+function NoteList({ notes, projectId }: NoteListProps) {
   const list = useMemo(() => {
     if (notes.length) {
       return (
@@ -18,6 +19,7 @@ function NoteList({ notes }: NoteListProps) {
             .map((note) => (
               <NoteItem
                 key={note.id}
+                projectId={projectId}
                 id={note.id}
                 title={note.content.slice(0, 50)}
                 subtitle={note.content.slice(0)}
@@ -35,7 +37,7 @@ function NoteList({ notes }: NoteListProps) {
         </div>
       );
     }
-  }, [notes]);
+  }, [notes, projectId]);
 
   return <div className="p-5 space-y-3 h-full overflow-y-scroll">{list}</div>;
 }

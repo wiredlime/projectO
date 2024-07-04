@@ -35,7 +35,7 @@ export default function Layout({ params, children }: LayoutProps) {
           />
           <ResizablePanelGroup direction="horizontal">
             <ResizablePanel defaultSize={30} className="h-full max-h-[92.5vh]">
-              <NoteList notes={notesByProject} />
+              <NoteList notes={notesByProject} projectId={project.id} />
             </ResizablePanel>
             <ResizableHandle withHandle />
             <ResizablePanel

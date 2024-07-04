@@ -1,14 +1,15 @@
 "use client";
-import React, { useCallback } from "react";
-import { Card } from "./ui/card";
+import React from "react";
 import { Button } from "./ui/button";
 import { X } from "lucide-react";
 
 import { formatDistanceToNow } from "date-fns";
 import { usePathname, useRouter } from "next/navigation";
 import { useStore } from "@/store";
+import Link from "next/link";
 
 type NoteItemProps = {
+  projectId: string;
   id: string;
   title: string;
   subtitle: string;
@@ -16,6 +17,7 @@ type NoteItemProps = {
 };
 
 export default function NoteItem({
+  projectId,
   id,
   title,
   subtitle,
@@ -25,18 +27,8 @@ export default function NoteItem({
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleOpenNote = useCallback(() => {
-    if (pathname.includes(`/notes/${id}`)) {
-      return;
-    } else if (pathname.includes(`/notes`)) {
-      const path = pathname.split("/").slice(1, 3).join("/");
-      router.push(`/${path}/notes/${id}`);
-    } else {
-      router.push(`${pathname}/notes/${id}`);
-    }
-  }, [id, pathname, router]);
-
   const handleDeleteNote = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
     event.stopPropagation();
     deleteNote(id);
     const path = pathname.split("/").splice(1, 3).join("/");
@@ -46,9 +38,9 @@ export default function NoteItem({
     }
   };
   return (
-    <Card
-      className="p-4 space-y-4 hover:cursor-pointer"
-      onClick={handleOpenNote}
+    <Link
+      href={`/projects/${projectId}/notes/${id}`}
+      className="p-4 space-y-4 rounded-lg border bg-card text-card-foreground shadow-sm"
     >
       <div className="flex items-center justify-between text-xs text-muted-foreground">
         <p>{formatDistanceToNow(updatedAt, { addSuffix: true })}</p>
@@ -62,6 +54,6 @@ export default function NoteItem({
         </Button>
       </div>
       <p className="text-xs text-muted-foreground line-clamp-3">{subtitle}</p>
-    </Card>
+    </Link>
   );
 }
