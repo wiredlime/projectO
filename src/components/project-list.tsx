@@ -31,7 +31,7 @@ export default function ProjectList() {
       );
     } else {
       return (
-        <div className="flex flex-col gap-1 ">
+        <div className="max-h-[70vh] flex flex-col gap-1 overflow-y-scroll">
           {projects
             .filter((project) =>
               project.name.toLowerCase().includes(search?.toLowerCase() || "")
@@ -60,7 +60,7 @@ export default function ProjectList() {
         onChange={handleChange}
         startAdornment={<Search className="shrink-0 w-5 h-5" />}
       />
-      <Collapsible className="space-y-2 max-h-64" defaultOpen>
+      <Collapsible className="space-y-2 max-h-[50vh]" defaultOpen>
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold">Projects</p>
           <CollapsibleTrigger>
