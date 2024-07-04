@@ -1,12 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import InlineEditable from "./inline-editable";
 import { Input } from "./ui/input";
 import { useCallback, useMemo } from "react";
 import { IProject, useStore } from "@/store";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type ProjectItemProps = {
   id: string;
@@ -17,6 +16,7 @@ type ProjectItemProps = {
 
 const ProjectItem = ({ id, name, project }: ProjectItemProps) => {
   const pathname = usePathname();
+  const router = useRouter();
   const { editProject, setRecents } = useStore();
   const handleSubmit = useCallback(
     (value: string) => {
@@ -25,17 +25,18 @@ const ProjectItem = ({ id, name, project }: ProjectItemProps) => {
     [editProject, id]
   );
 
-  const handleOpenProject = () => {
-    setRecents(project);
+  const handleOpenProject = async () => {
+    await setRecents(project);
+    router.push(`/projects/${id}`);
   };
+
   const isActive = useMemo(() => {
     return pathname.includes(`projects/${id}`);
   }, [id, pathname]);
 
   return (
-    <Link
+    <div
       onClick={handleOpenProject}
-      href={`/projects/${id}`}
       className={cn(
         "px-3 py-1.5 flex items-center gap-2 rounded-md hover:bg-stone-200 hover:cursor-pointer first:animate-slide-in",
         {
@@ -56,7 +57,7 @@ const ProjectItem = ({ id, name, project }: ProjectItemProps) => {
           />
         )}
       />
-    </Link>
+    </div>
   );
 };
 
