@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+![intro-projecto](https://github.com/wiredlime/projectO/assets/79243058/9ceec9df-c45f-439a-9b11-3a09f7f766bd)
 
-First, run the development server:
+### Introduction
+ProjectO is a Markdown-based note-taking application where you’ll be provided a seamless note creating and managing experience. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Features
+* Markdown Support: Easy formatting with Markdown 
+* Multi-view mode: Able to switch between editing, preview and diff view
+* Autosave: Notes are automatically saved to prevent data loss.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### User guide:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Use one to six # characters to create a heading. The number of # characters determines the heading level.
+* Use * or - to create a list item.
+* Use > to create a block quote.
+* Select a text and press Ctrl+B to make it bold, Ctrl+I to make it italic, or Ctrl+U to underline it. Use Cmd on macOS.
+* With text selected, use Cmd+K to open the link dialog.
+* Use ` to create inline code.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Technologies: 
+* NextJS, TailwindCSS, RadixUI, Zustand, MDXEditor
 
-## Learn More
+### Screenshots
+https://github.com/wiredlime/projectO/assets/79243058/de8861f8-e495-4908-a896-c3f62b8a8976
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Additional resources
+* [Next.js Documentation](https://nextjs.org/docs)
+* [TailwindCSS Documentation](https://tailwindcss.com/docs)
+* [MDXEditor Documentation](https://mdxeditor.dev/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Contact
+For any questions or collaboration, please reach out to us at [tiennguyen.baked@gmail.com](mailto:tiennguyen.baked@gmail.com) .
